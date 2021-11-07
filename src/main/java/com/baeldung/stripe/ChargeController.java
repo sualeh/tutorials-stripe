@@ -24,12 +24,18 @@ public class ChargeController {
     model.addAttribute("status", charge.getStatus());
     model.addAttribute("balance_transaction", charge.getBalanceTransaction());
     model.addAttribute("charge_request", chargeRequest);
+
     return "result";
   }
 
   @ExceptionHandler(StripeException.class)
   public String handleError(final Model model, final StripeException ex) {
-    model.addAttribute("error", ex.getMessage());
+    model.addAttribute("error", ex.getUserMessage());
+    model.addAttribute("request_id", ex.getRequestId());
+    model.addAttribute("status_code", ex.getStatusCode());
+    model.addAttribute("charge_id", ex.getStripeError().getCharge());
+    model.addAttribute("decline_code", ex.getStripeError().getDeclineCode());
+
     return "result";
   }
 }
