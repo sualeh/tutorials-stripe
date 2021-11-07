@@ -34,8 +34,8 @@
 		<form action='/charge' method='POST' id='checkout-form'>
 			<!-- Set data to be posted for a charge -->
 			<input type='hidden' th:value='${description}' name='description' />
-			<input type='hidden' th:value='${currency}' name='currency' /> <input
-				type='hidden' th:value='${amount}' name='amount' />
+			<input type='hidden' th:value='${currency}' name='currency' /> 
+      <input type='hidden' th:value='${amount}' name='amount' />
 			<!-- Get Stripe token, and add it as part of submitted form input -->
 			<script src='https://checkout.stripe.com/checkout.js'
 				class='stripe-button'
