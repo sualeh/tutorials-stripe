@@ -9,4 +9,5 @@ public record ChargeRequest(
     // Stripe Payment Element overlay
     String stripeTokenType, // token type returned by Stripe Payment Element overlay
     String stripeEmail // email returned by Stripe Payment Element overlay
-    ) {}
+    ) //
+{}

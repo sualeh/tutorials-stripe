@@ -30,6 +30,7 @@ public class ChargeController {
 
   @ExceptionHandler(StripeException.class)
   public String handleError(final Model model, final StripeException ex) {
+
     model.addAttribute("error", ex.getUserMessage());
     model.addAttribute("request_id", ex.getRequestId());
     model.addAttribute("status_code", ex.getStatusCode());

@@ -1,4 +1,4 @@
-package com.baeldung.stripe;
+package com.baeldung.stripe.application;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

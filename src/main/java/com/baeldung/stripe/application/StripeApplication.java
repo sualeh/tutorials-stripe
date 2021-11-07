@@ -1,4 +1,4 @@
-package com.baeldung.stripe;
+package com.baeldung.stripe.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
