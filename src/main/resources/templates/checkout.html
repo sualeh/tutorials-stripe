@@ -44,12 +44,10 @@
 			<!-- Get Stripe token, and add it as part of submitted form input -->
 			<script src='https://checkout.stripe.com/checkout.js'
 				class='stripe-button'
-				th:attr='data-key=${stripePublicKey},
-                         data-amount=${amount},
-                         data-currency=${currency}'
+				th:attr='data-key=${stripePublicKey},data-description=${description},data-currency=${currency},data-amount=${amount}'
 				data-name='Baeldung'
 				data-image='http://www.baeldung.com/wp-content/themes/baeldung/favicon/android-chrome-192x192.png'
-				data-description='${description}' data-locale='auto'
+				data-locale='auto'
 				data-zip-code='false'></script>
 		</form>
 	</div>
