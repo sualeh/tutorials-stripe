@@ -1,7 +1,7 @@
 package com.baeldung.stripe;
 
-import java.util.HashMap;
-import java.util.Map;
+import static java.util.Map.entry;
+import static java.util.Map.ofEntries;
 
 import javax.annotation.PostConstruct;
 
@@ -16,15 +16,15 @@ import com.stripe.model.Charge;
 public class StripeService {
 
   @Value("${STRIPE_SECRET_KEY}")
-  String secretKey;
+  private String secretKey;
 
   public Charge charge(final ChargeRequest chargeRequest) throws StripeException {
-    final Map<String, Object> chargeParams = new HashMap<>();
-    chargeParams.put("amount", chargeRequest.amount());
-    chargeParams.put("currency", chargeRequest.currency());
-    chargeParams.put("description", chargeRequest.description());
-    chargeParams.put("source", chargeRequest.stripeToken());
-    return Charge.create(chargeParams);
+    return Charge.create(
+        ofEntries(
+            entry("amount", chargeRequest.amount()),
+            entry("currency", chargeRequest.currency()),
+            entry("description", chargeRequest.description()),
+            entry("source", chargeRequest.stripeToken())));
   }
 
   @PostConstruct

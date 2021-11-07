@@ -7,11 +7,11 @@
         <h3 th:if='${error}' th:text='${error}' style='color: red;'></h3>
         <div th:unless='${error}'>
             <h3 style='color: green;'>Success!</h3>
-            <div>Id.: <span th:text='${id}' /></div>
+            <div>Charge Id: <span th:text='${id}' /></div>
             <div>Status: <span th:text='${status}' /></div>
-            <div>Charge id.: <span th:text='${chargeId}' /></div>
-            <div>Balance transaction id.: <span th:text='${balance_transaction}' /></div>
+            <div>Balance Transaction Id: <span th:text='${balance_transaction}' /></div>
+            <div>(Original) Charge Request: <span th:text='${charge_request}' /></div>
         </div>
-        <a href='/checkout.html'>Checkout again</a>
+        <a href='/checkout'>Checkout again</a>
     </body>
 </html>

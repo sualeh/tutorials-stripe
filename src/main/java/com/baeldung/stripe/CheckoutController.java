@@ -13,10 +13,10 @@ public class CheckoutController {
 
   @RequestMapping("/checkout")
   public String checkout(final Model model) {
-    model.addAttribute("description", "Example purchase for Stripe tutorial");
+    model.addAttribute("description", "Stripe API Tutorial");
+    model.addAttribute("currency", "USD");
     model.addAttribute("amount", 50 * 100); // in cents
     model.addAttribute("stripePublicKey", stripePublicKey);
-    model.addAttribute("currency", Currency.USD);
     return "checkout";
   }
 }

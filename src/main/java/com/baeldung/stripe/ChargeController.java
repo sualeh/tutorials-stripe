@@ -17,11 +17,14 @@ public class ChargeController {
   @PostMapping("/charge")
   public String charge(final ChargeRequest chargeRequest, final Model model)
       throws StripeException {
+
+    System.out.printf("Charging: %s", chargeRequest);
     final Charge charge = paymentsService.charge(chargeRequest);
+
     model.addAttribute("id", charge.getId());
     model.addAttribute("status", charge.getStatus());
-    model.addAttribute("chargeId", charge.getId());
     model.addAttribute("balance_transaction", charge.getBalanceTransaction());
+    model.addAttribute("charge_request", chargeRequest);
     return "result";
   }
 
