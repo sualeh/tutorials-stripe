@@ -18,7 +18,6 @@ public class ChargeController {
   public String charge(final ChargeRequest chargeRequest, final Model model)
       throws StripeException {
 
-    System.out.printf("Charging: %s", chargeRequest);
     final Charge charge = paymentsService.charge(chargeRequest);
 
     model.addAttribute("id", charge.getId());
