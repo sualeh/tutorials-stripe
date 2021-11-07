@@ -20,10 +20,10 @@ public class StripeService {
 
   public Charge charge(final ChargeRequest chargeRequest) throws StripeException {
     final Map<String, Object> chargeParams = new HashMap<>();
-    chargeParams.put("amount", chargeRequest.getAmount());
-    chargeParams.put("currency", chargeRequest.getCurrency());
-    chargeParams.put("description", chargeRequest.getDescription());
-    chargeParams.put("source", chargeRequest.getStripeToken());
+    chargeParams.put("amount", chargeRequest.amount());
+    chargeParams.put("currency", chargeRequest.currency());
+    chargeParams.put("description", chargeRequest.description());
+    chargeParams.put("source", chargeRequest.stripeToken());
     return Charge.create(chargeParams);
   }
 
