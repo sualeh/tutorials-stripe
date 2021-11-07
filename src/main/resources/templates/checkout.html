@@ -37,7 +37,7 @@
 		</table>
 		
 		<form action='/charge' method='POST' id='checkout-form'>
-			<!-- Set data to be posted for a charge -->
+			<!-- Set data to be posted for a charge, which is not returned again by the Stripe API -->
 			<input type='hidden' th:value='${description}' name='description' />
 			<input type='hidden' th:value='${currency}' name='currency' /> 
       <input type='hidden' th:value='${amount}' name='amount' />
@@ -48,7 +48,7 @@
 				data-name='Baeldung'
 				data-image='http://www.baeldung.com/wp-content/themes/baeldung/favicon/android-chrome-192x192.png'
 				data-locale='auto'
-				data-zip-code='false'></script>
+				data-zip-code='false' />
 		</form>
 	</div>
 </body>
